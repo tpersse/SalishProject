@@ -58,6 +58,8 @@ with open(l, 'r') as linda, open(p, 'r') as probe:
 keepersr1 = []
 keepersr2 = []
 
+# for this section, need to determine the locations of the LINDA and targeting oligos (probes), so string slicing will work 
+
 with open(r1, 'r') as read1, open(r2, 'r') as read2:
 	while True:
 		# reads in header lines from both files and stores for later reprinting
