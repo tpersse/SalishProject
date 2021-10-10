@@ -50,13 +50,15 @@ with open(l, 'r') as linda, open(p, 'r') as probe:
 
 	# looping through the probes file, which was adapted from excel file. This version only has the 45 nt. segements, since these are more stringent and required for verification
 	for line in probe:
-		line = line.strip().upper()
+		line = line.strip().upper() # some of these sequences were lowercase, required the use of upper
 		tocheck_dict['probes'] += line
 
 ######### READING FASTQ FILES, FILTERING READS #########
 
-keepersr1 = []
-keepersr2 = []
+keepersr1 = [] # creates a list of fastq components for reads that meet quality specifications in read 1
+keepersr2 = [] # creates a list of fastq components for reads that meet quality specifications in read 2
+i = 0 # counts total number of reads covered
+on_target = 0 # counts the number of reads that are on target
 
 # for this section, need to determine the locations of the LINDA and targeting oligos (probes), so string slicing will work 
 
