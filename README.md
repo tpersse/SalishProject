@@ -7,6 +7,6 @@ We sought to create a portable bioinformatic pipeline for performing variant cal
 
 ### Workflow: 
 
-!![](images/SalishWkflw.jpg)
+![](images/SalishWkflw.jpg)
 
-(Include portion here about what the molecular biology prep involved) During quality assessment, reads with imperfect LINDA and/or probe sequences were eliminated, then adapters were trimmed. Remaining reads were then aligned to the ensembl reference human genome, then deduplicated and error corrected using Connor [1]. Coverage was determined by generating consensus cfDNA fragments from the reads, then determining the number of fragments per position within EGFR and TP53. Finally, variant calling was performed using lofreq. Software incorporated into final pipeline is indicated in green.
+(Include portion here about what the molecular biology prep involved) During quality assessment, reads with imperfect LINDA and/or probe sequences were eliminated, then adapters were trimmed. Remaining reads were then aligned to the ensembl reference human genome via **bwa**, then deduplicated and error corrected using an in house python script (). Coverage was determined by generating consensus cfDNA fragments from the reads, then determining the number of fragments per position within EGFR and TP53. Finally, variant calling was performed using lofreq. Software incorporated into final pipeline is indicated in green.
