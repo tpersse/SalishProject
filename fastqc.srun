@@ -1,0 +1,14 @@
+#!/bin/bash 
+#SBATCH --account=bgmp 
+#SBATCH --partition=bgmp 
+#SBATCH --job-name=FASTQC
+#SBATCH --output=FASTQC_%j.out 
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --time=1:00:00 
+#SBATCH --cpus-per-task=1
+
+module load fastqc/0.11.5
+/usr/bin/time -v cat Read1Filtered.fastq | fastqc stdin -o R1_Fastqc 
+/usr/bin/time -v cat Read2Filtered.fastq | fastqc stdin -o R2_Fastqc
+ 
