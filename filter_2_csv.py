@@ -60,12 +60,12 @@ with open(l, 'r') as linda, open(p, 'r') as probe:
 	# looping through the probes file, which was adapted from excel file. This version only has the 45 nt. segements, since these are more stringent and required for verification
 	for line in probe:
 		line = line.strip().upper() # some of these sequences were lowercase, required the use of upper
-		probes_dict[line] = 0
+		probes_dict[line[:40]] = 0
 		if first == True:
-			tocheck_dict['probes'] = [line]
+			tocheck_dict['probes'] = [line[:40]]
 			first=False
 		else:
-			tocheck_dict['probes'] += [line]
+			tocheck_dict['probes'] += [line[:40]]
 
 ######### READING FASTQ FILES, FILTERING READS #########
 
@@ -86,7 +86,7 @@ with open(r1, 'r') as read1, open(r2, 'r') as read2, open('Read1Filtered.fastq',
 		sequence1 = read1.readline().strip()
 		linda_r1 = sequence1[8:18]
 		sequence2 =  read2.readline().strip()
-		probe_r2 = sequence2[0:45]
+		probe_r2 = sequence2[0:40]
 		# determine number of reads with perfect probe, can't do later because script checks probes after lindas
 		if probe_r2 in tocheck_dict['probes']:
 			probe_ct += 1
