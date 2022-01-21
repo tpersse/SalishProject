@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --account=bgmp 
+#SBATCH --partition=bgmp 
+#SBATCH --job-name=cutadapt
+#SBATCH --output=cutadapt_%j.out
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --time=8:00:00 
+#SBATCH --cpus-per-task=1
+
+/usr/bin/time -v cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -j 0 -o /projects/bgmp/shared/2021_projects/Salish/SalishProj/Deduplicate/Read1_40_filtered_cut.fastq -p /projects/bgmp/shared/2021_projects/Salish/SalishProj/Deduplicate/Read2_40_filtered_cut.fastq /projects/bgmp/shared/2021_projects/Salish/SalishProj/Read1Filtered.fastq /projects/bgmp/shared/2021_projects/Salish/SalishProj/Read2Filtered.fastq
+
