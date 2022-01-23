@@ -6,7 +6,7 @@ While not all of the listed literature and software were used in our final exper
 
 ## Software Used:
 ---
-### 1. bwa mem (Burrows-Wheeler Alignment)
+### 1. bwa (Burrows-Wheeler Alignment)
 
 Manual:
 
@@ -39,13 +39,12 @@ GitHub Repo:
 - https://github.com/marcelm/cutadapt
 
 ## Literature Consulted
----
 
-### 2. Sample Prep Methods Background
+### 1. Sample Prep Methods Background
 
 - C. K. Raymond, F. C. Raymond, K. Hill, UltraPrep is a scalable, cost-effective, bead-based method for purifying cell-free DNA. PLOS ONE. 15, e0231854 (2020).
 
-### 3. cfDNA and Liquid Biopsy Background
+### 2. cfDNA and Liquid Biopsy Background
 
 - A. Kustanovich, R. Schwartz, T. Peretz, A. Grinshpun, Life and death of circulating cell-free DNA. Cancer Biol Ther. 20, 1057–1067 (2019).
 
