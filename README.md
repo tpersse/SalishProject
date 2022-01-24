@@ -8,7 +8,7 @@ We sought to create a portable bioinformatic pipeline for performing variant cal
 
 ### Workflow: 
 ---
-| ![workflow](images/SalishWkflw.jpg) |
+| ![workflow](images/Wkflw_mk2.jpg) |
 |:--:|
 | <b>Overall project workflow, from molecular biology to bioinformatic approach used. </b>|
 
