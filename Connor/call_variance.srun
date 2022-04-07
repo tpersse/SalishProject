@@ -1,0 +1,12 @@
+#!/bin/bash 
+#SBATCH --account=bgmp 
+#SBATCH --partition=bgmp 
+#SBATCH --job-name=variance
+#SBATCH --output=variance_%j.out 
+#SBATCH --nodes=1 
+#SBATCH --ntasks-per-node=8 
+#SBATCH --time=1:00:00 
+#SBATCH --cpus-per-task=1
+
+
+bcftools mpileup -Ou -f /projects/bgmp/shared/2021_projects/Salish/alignment/bwa/ref_genome.fasta connor_deduped_output.bam| bcftools call -mv -Ov -o calls.vcf
