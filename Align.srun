@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --job-name=STARAlign
+#SBATCH --output=STARAlign_%j.out
+#SBATCH --nodes=1 
+#SBATCH --cpus-per-task=28
+#SBATCH --time=2:00:00 
+
+/usr/bin/time -v STAR --runThreadN 8 \
+--runMode alignReads --outFilterMultimapNmax 3 \
+--outSAMunmapped Within KeepPairs --alignIntronMax 1000000 \
+--alignMatesGapMax 1000000 --readFilesCommand zcat \
+--readFilesIn Read1Filtered.fastq.gz Read2Filtered.fastq.gz \
+--genomeDir /projects/bgmp/shared/2021_projects/Salish/SalishProj/Genome_ref_dir \
+--outFileNamePrefix Align_OUTPUT
