@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --job-name=GenerateRef
+#SBATCH --output=GenerateRef_%j.out
+#SBATCH --nodes=1 
+#SBATCH --cpus-per-task=28
+#SBATCH --time=2:00:00 
+
+/usr/bin/time -v STAR --runThreadN 8 \
+--runMode genomeGenerate \
+--genomeDir /projects/bgmp/shared/2021_projects/Salish/SalishProj/Genome_ref_dir \
+--genomeFastaFiles /projects/bgmp/shared/2021_projects/Salish/SalishProj/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+--sjdbGTFfile /projects/bgmp/shared/2021_projects/Salish/SalishProj/Homo_sapiens.GRCh38.104.gtf
